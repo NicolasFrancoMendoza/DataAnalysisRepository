@@ -46,7 +46,7 @@ print(up)
 
 # 2 
 # Create a Table
-def dictionary_creator(H_name):
+def dictionary_creator_byname(H_name):
   pos = names.index(H_name)
   
   dictio = {"Name": names[pos],"Month": months[pos],"Year": years[pos], "Max Sustained Wild": max_sustained_winds[pos],"Areas Affected": areas_affected[pos], "Damage": damages[pos], "Deaths": deaths[pos]}
@@ -54,13 +54,24 @@ def dictionary_creator(H_name):
   return dictio
 
 # Create and view the hurricanes dictionary
-dictionary_creator("Michael")
+dictionary_creator_byname("Michael")
 
 # 3
 # Organizing by Year
+def dictionary_creator_byyear(H_year):
+  dictio = []
+  count = 0
+  for year in years:
+    if year == H_year:
+      pos = count
+
+      dictio.append({"Name": names[pos],"Month": months[pos],"Year": years[pos], "Max Sustained Wild": max_sustained_winds[pos],"Areas Affected": areas_affected[pos], "Damage": damages[pos], "Deaths": deaths[pos]})
+    count += 1
+  print(dictio)
+  return dictio
 
 # create a new dictionary of hurricanes with year and key
-
+dictionary_creator_byyear(1932)
 
 # 4
 # Counting Damaged Areas
